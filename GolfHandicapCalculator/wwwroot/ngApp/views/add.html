@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add New Course</title>
+</head>
+<body>
+    <div>
+        <a href="https://www.swingbyswing.com/courses" target="_blank">Find Course Slope and Rating Here</a>
+        <hr />
+    </div>
+    <div>
+        <div class="header-dark">
+            <nav class="navbar navbar-default navigation-clean-search">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+
+                </div>
+            </nav>
+            <div class="container hero">
+                <div class="row">
+                    <form name="AddCourse">
+                        <table align="center" border="0" class="table-content" ng-app="GolfHandiCapCalc">
+                            <tr class="table-content">
+                                <td class="tableCell"><h5>Enter Course Name: <input type="text" name="itemName" ng-model="controller.course.name"/></h5></td>
+                                <td class="tableCell"><h5>Enter Course Slope: <input type="text" name="itemDesc" ng-model="controller.course.slope"  size="10"  /></h5></td>
+                                <td class="tableCell"><h5>Enter Course Rating: <input type="text" name="itemBid" ng-model="controller.course.rating"  size="10"  /></h5></td>
+                                <td>&nbsp;</td>
+                                <td><button class="btn" ng-click="controller.save()"> Enter New Course</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <hr />
+                    <form name="ExistingCourses">
+                        <table align="center" border="0" class="table-content">
+                            <tr class="table-content">
+                                <td class="tableCell">Course Name</td>
+                                <td class="tableCell">Course Rating</td>
+                                <td class="tableCell">Course Slope</td>
+                            </tr>
+                            <tr ng-repeat="course in controller.addcourse track by $index" class="tab-content">
+                                <td><h5>{{course.name}}</h5></td>
+                                <td><h5>{{course.rating}}</h5></td>
+                                <td><h5>{{course.slope}}</h5></td>
+                            </tr>
+                        </table>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
