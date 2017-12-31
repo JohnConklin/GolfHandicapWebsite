@@ -1,0 +1,40 @@
+﻿<html ng-app="GolfHandicapCalculator">
+<head>
+    <title>Golf Handicap Calculator</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/Header-Dark.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <base href="/" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Golf Handicap Calculator</h1>
+        <div class="navbar">
+            <a href="/">Home</a> /
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/add">Add Course</a>
+        </div>
+
+        <hr />
+
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <!-- App Files-->
+    <script src="~/ngApp/app.js"></script>
+    <script src="~/ngApp/controllers/controller.js"></script>
+    <script src="~/ngApp/controllers/addCourse.js"></script>
+    <script src="~/ngApp/services/services.js"></script>
+
+
+</body>
+</html>

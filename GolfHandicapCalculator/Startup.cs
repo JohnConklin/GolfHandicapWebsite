@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using GolfHandicapCalculator.Models;
-using System.IO;
 
 namespace GolfHandicapCalculator
 {
@@ -39,26 +38,18 @@ namespace GolfHandicapCalculator
                 app.UseDeveloperExceptionPage();
             }
 
-            //adding to avoid using "api/values" on startup.
-            app.Use(async (context, next) =>
-            {
-                await next();
+            app.UseCors(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            
+            //app.UseMvc();
 
-                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value) && !context.Request.Path.Value.StartsWith("api"))
-                {
-                    context.Request.Path = "/Index.html";
-                    context.Response.StatusCode = 200;
-                    await next();
-                }
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
 
-            //Added to avoid using api/values on startup
+            //Added to try and get index file to display
             app.UseDefaultFiles();
             app.UseStaticFiles();
-
-            app.UseCors(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-
-            app.UseMvc();
         }
     }
 }
