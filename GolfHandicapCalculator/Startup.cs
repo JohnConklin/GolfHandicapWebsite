@@ -52,7 +52,7 @@ namespace GolfHandicapCalculator
                 routes.MapRoute(
                     name: "default",
                     template: "{*path}",
-                    defaults: new { controller = "Home", action = "Index" }
+                    defaults: new { controller = "Home", action = "Index", id="" }
                 );
             });
         }
