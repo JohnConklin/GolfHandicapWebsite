@@ -48,8 +48,8 @@ namespace GolfHandicapCalculator
             });
 
             //Added to try and get index file to display
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
         }
     }
 }

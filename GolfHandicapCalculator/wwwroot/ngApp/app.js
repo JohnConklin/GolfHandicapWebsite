@@ -1,4 +1,4 @@
-angular.module('NewGolfHandicapCalc', ['ui.router', 'ngResource']).config(routing);
+angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(routing);
 
         routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
         function routing($stateProvider, $urlRouterProvider, $locationProvider) {
