@@ -30,26 +30,31 @@ namespace GolfHandicapCalculator
                 });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+                app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
             }
 
+            app.UseStaticFiles();
             app.UseCors(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-            
-            //app.UseMvc();
+            //app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{*path}",
+                    defaults: new { controller = "Home", action = "Index" }
+                );
             });
-
-            //Added to try and get index file to display
-            //app.UseDefaultFiles();
-            //app.UseStaticFiles();
         }
     }
 }
