@@ -1,6 +1,5 @@
 .header-dark {
-
-    background: url(../images/mountain_bg.jpg) #444;
+    background-image: url('../images/mountain_bg.jpg');
     background-size: cover;
     padding-bottom: 120px;
 }
