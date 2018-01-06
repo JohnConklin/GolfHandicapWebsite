@@ -1,6 +1,5 @@
 angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(routing);
 
-
         routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
         function routing($stateProvider, $urlRouterProvider, $locationProvider) {
             $stateProvider.state('Home', {
@@ -21,11 +20,19 @@ angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(rou
             }).state('Add', {
                 url: '/add',
                 templateUrl: '/ngApp/views/add.html',
-                controller: AddCourseController,
+                controller: AddCourse,
+                controllerAs: 'controller'
+            }).state('Rounds', {
+                url: '/rounds',
+                templateUrl: '/ngApp/views/rounds.html',
+                controller: AddRounds,
                 controllerAs: 'controller'
             }).state('login', {
                 url: '/login',
                 templateUrl: '/ngApp/views/login.html'
+            }).state('register', {
+                url: '/register',
+                templateUrl: '/ngApp/views/register.html'
             }).state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'

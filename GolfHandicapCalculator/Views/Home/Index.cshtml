@@ -13,13 +13,20 @@
 <body>
     <div class="container">
         <h1>Golf Handicap Calculator</h1>
-        <div class="navbar">
+        <div class="navbar-left">
             <a href="/">Home</a> |
             <a href="/about">About</a>|
             <a href="/contact">Contact</a>|
             <a href="/add">Add Course</a>|
         </div>
-
+        <div class="container">
+            <div class="navbar-right">
+                <a href="/login">Login</a>
+            </div>
+            <div class="navbar-right">
+                <a href="/register">Register</a>&nbsp; |
+            </div>
+        </div>
         <hr />
 
         <ui-view></ui-view>
@@ -37,7 +44,6 @@
     
     <script src="~/ngApp/app.js"></script>
     <script src="~/ngApp/controllers/controller.js"></script>
-    <script src="~/ngApp/controllers/addCourse.js"></script>
     <script src="~/ngApp/services/services.js"></script>
 
 

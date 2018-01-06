@@ -5,6 +5,18 @@ class HomeController {
         this.message = 'hello world';
     }
 }
+class AddCourse {
+    constructor() {
+        this.message = 'Hello, welcome to my site.';
+    }
+}
+
+class AddRounds {
+    constructor() {
+        this.message = 'Hello, welcome to my site.';
+    }
+}
+
 
 class AboutController {
     constructor() {

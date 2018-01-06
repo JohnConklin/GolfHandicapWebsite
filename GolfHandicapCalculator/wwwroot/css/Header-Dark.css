@@ -179,7 +179,7 @@
   background-color:#666;
 }
 
-h3{
+h3, h4{
     color:antiquewhite;
 }
 
@@ -188,4 +188,15 @@ h3{
     border-bottom:solid;
     border-top:solid;
     color:white;
+}
+
+.tableCellContents{
+    font-weight:bold;
+    color:black;
+}
+
+address{
+    font-weight: bold;
+    color: white;
+    align-content:center;
 }
