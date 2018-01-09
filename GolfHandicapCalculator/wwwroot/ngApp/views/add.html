@@ -18,9 +18,9 @@
                     <form name="AddCourse">
                         <table align="center" border="0" class="table-content" ng-app="GolfHandicapCalculator">
                             <tr class="table-content">
-                                <td class="tableCell"><h5>Enter Course Name: <input type="text" class="tableCellContents" name="itemName" ng-model="controller.addCourse.name" /></h5></td>
-                                <td class="tableCell"><h5>Enter Course Slope: <input type="text" class="tableCellContents" name="itemDesc" ng-model="controller.addCourse.slope" size="10" /></h5></td>
-                                <td class="tableCell"><h5>Enter Course Rating: <input type="text" class="tableCellContents" name="itemBid" ng-model="controller.addCourse.rating" size="10" /></h5></td>
+                                <td class="tableCell"><h5>Enter Course Name: <input type="text" class="tableCellContents" name="name" ng-model="controller.addCourse.name" /></h5></td>
+                                <td class="tableCell"><h5>Enter Course Slope: <input type="text" class="tableCellContents" name="slope" ng-model="controller.addCourse.slope" size="10" /></h5></td>
+                                <td class="tableCell"><h5>Enter Course Rating: <input type="text" class="tableCellContents" name="rating" ng-model="controller.addCourse.rating" size="10" /></h5></td>
                                 <td>&nbsp;</td>
                                 <td><button class="btn" ng-click="controller.save()"> Enter New Course</button></td>
                             </tr>
@@ -34,7 +34,7 @@
                                 <td class="tableCell">Course Rating</td>
                                 <td class="tableCell">Course Slope</td>
                             </tr>
-                            <tr ng-repeat="course in controller.addcourse track by $index" class="tab-content">
+                            <tr ng-repeat="course in controller.addCourse track by $index" class="tab-content">
                                 <td><h5>{{course.name}}</h5></td>
                                 <td><h5>{{course.rating}}</h5></td>
                                 <td><h5>{{course.slope}}</h5></td>

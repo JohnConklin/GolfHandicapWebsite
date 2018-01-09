@@ -14,7 +14,14 @@
                     <form name="AddRound">
                         <table align="center" border="0" class="table-content" ng-app="GolfHandicapCalculator">
                             <tr class="table-content">
-                                <td class="tableCell"><h5>Select Course Name: <input type="text" class="tableCellContents" name="itemName" ng-model="controller.addRound.name" /></h5></td>
+                                <td class="tableCell">
+                                         <h5>
+                                            Select Course Name:
+                                            <select>
+                                                <option ng-repeat="course in controller.addcourse track by $index">{{name}}</option>
+                                            </select>
+                                        </h5>
+                                </td>
                                 <td class="tableCell"><h5>Enter Score: <input type="text" class="tableCellContents" name="itemDesc" ng-model="controller.addRound.holdScore" size="10" /></h5></td>
                                 <td>&nbsp;</td>
                                 <td><button class="btn" ng-click="controller.save()"> Enter New Round</button></td>
