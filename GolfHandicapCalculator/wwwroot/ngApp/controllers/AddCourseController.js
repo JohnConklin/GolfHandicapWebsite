@@ -1,20 +1,10 @@
-﻿//list existing courses
-
-export class ListCourseController {
-
-    constructor(courseService) {
-        this.course = courseService.listCourses();
-    }
-}
-
-ListCourseController.$inject = ['listCourses'];
-
-//add new course
-export class CourseAddController {
+﻿//add new course
+class CourseAddController {
 
     constructor(courseService, $state) {
         this.courseService = courseService;
         this.$state = $state;
+        this.course = courseService.listCourses();
     }
 
     addCourse() {
@@ -24,4 +14,4 @@ export class CourseAddController {
     }
 }
 
-ListCourseController.$inject = ['courseService', '$state'];
+//ListCourseController.$inject = ['courseService', '$state'];

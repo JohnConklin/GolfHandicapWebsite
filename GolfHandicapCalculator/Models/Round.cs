@@ -9,6 +9,7 @@ namespace GolfHandicapCalculator.Models
     {
         public int RoundID { get; set; }
         public int HoleScore { get; set; }
+        public string CourseName { get; set; }
         public ICollection<GolfCourse> GolfCourse { get; set; }  //Course ID
     }
 }

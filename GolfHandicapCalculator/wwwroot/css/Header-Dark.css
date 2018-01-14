@@ -200,3 +200,8 @@ address{
     color: white;
     align-content:center;
 }
+
+select, option{
+    color: black;
+    font-weight:bold;
+}

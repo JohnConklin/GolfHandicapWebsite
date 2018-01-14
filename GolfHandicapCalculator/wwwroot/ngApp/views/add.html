@@ -15,29 +15,29 @@
             <div class="container hero">
                 <div class="row">
                     <h4 align="center">Add New Course</h4>
-                    <form name="AddCourse" ng-submit="controller.addCourse()">
+                    <form name="AddCourse">
                         <table align="center" border="0" class="table-content" ng-app="GolfHandicapCalculator">
                             <tr class="table-content">
                                 <td class="tableCell"><h5>Enter Course Name: <input type="text" class="tableCellContents" name="name" ng-model="controller.course.name" /></h5></td>
                                 <td class="tableCell"><h5>Enter Course Slope: <input type="text" class="tableCellContents" name="slope" ng-model="controller.course.slope" size="10" /></h5></td>
                                 <td class="tableCell"><h5>Enter Course Rating: <input type="text" class="tableCellContents" name="rating" ng-model="controller.course.rating" size="10" /></h5></td>
                                 <td>&nbsp;</td>
-                                <td><button class="btn" ng-click="controller.save()"> Enter New Course</button></td>
+                                <td><button class="btn" ng-click="controller.addCourse()">Enter New Course</button></td>
                             </tr>
                         </table>
                     </form>
                     <hr />
                     <form name="ExistingCourses">
                         <table align="center" border="0" class="table-content">
-                            <tr class="table-content">
-                                <td class="tableCell">Course Name</td>
-                                <td class="tableCell">Course Rating</td>
-                                <td class="tableCell">Course Slope</td>
+                            <tr class="table-content" align="center">
+                                <td class="tableCell" width="20%">Course Name</td>
+                                <td class="tableCell" width="10%">Course Rating</td>
+                                <td class="tableCell" width="10%">Course Slope</td>
                             </tr>
-                            <tr ng-repeat="course in controller.course" class="tab-content">
-                                <td><h5>{{course.name}}</h5></td>
-                                <td><h5>{{course.rating}}</h5></td>
-                                <td><h5>{{course.slope}}</h5></td>
+                            <tr ng-repeat="course in controller.course" class="tab-content" align="center">
+                                <td><h5 class="tableCell">{{course.name}}</h5></td>
+                                <td><h5 class="tableCell">{{course.rating}}</h5></td>
+                                <td><h5 class="tableCell">{{course.slope}}</h5></td>
                             </tr>
                         </table>
                     </form>

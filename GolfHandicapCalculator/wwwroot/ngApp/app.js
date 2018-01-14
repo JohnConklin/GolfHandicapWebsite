@@ -20,12 +20,12 @@ angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(rou
             }).state('Add', {
                 url: '/add',
                 templateUrl: '/ngApp/views/add.html',
-                controller: AddCourse,
+                controller: CourseAddController,
                 controllerAs: 'controller'
             }).state('Rounds', {
                 url: '/rounds',
                 templateUrl: '/ngApp/views/rounds.html',
-                controller: AddRounds,
+                controller: RoundAddController,
                 controllerAs: 'controller'
             }).state('login', {
                 url: '/login',
