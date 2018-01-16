@@ -9,9 +9,9 @@ class CourseAddController {
 
     addCourse() {
         this.courseService.save(this.course).then(
-            () => this.$state.go('add')
+            () => this.$state.go('Add')
         );
     }
 }
 
-//ListCourseController.$inject = ['courseService', '$state'];
+CourseAddController.$inject = ['courseService', '$state'];

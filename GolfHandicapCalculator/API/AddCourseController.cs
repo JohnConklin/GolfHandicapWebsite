@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using GolfHandicapCalculator.Models;
 
-
+//API File 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GolfHandicapCalculator.API
@@ -18,14 +18,14 @@ namespace GolfHandicapCalculator.API
             this._db = db;
         }
 
-        // GET: api/<controller>
+        // GET: api/<controller>  Display list of courses
         [HttpGet]
         public IEnumerable<GolfCourse> Get()
         {
             return _db.GolfCourses.ToList();
         }
 
-        // GET api/<controller>/5
+        // GET api/<controller>/5  Display list of courses by ID
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -37,6 +37,7 @@ namespace GolfHandicapCalculator.API
             return Ok(golfcourses);
         }
 
+        //Post new courses to database or update is already loaded.
         [HttpPost]
         public IActionResult Post([FromBody]GolfCourse course)
         {

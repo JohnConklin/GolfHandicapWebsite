@@ -8,11 +8,11 @@ class RoundAddController {
         this.course = roundService.listCourses();
     }
 
-    addCourse() {
+    addRound() {
         this.roundService.save(this.round).then(
             () => this.$state.go('add')
         );
     }
 }
 
-//ListCourseController.$inject = ['courseService', '$state'];
+RoundAddController.$inject = ['roundService', '$state'];
