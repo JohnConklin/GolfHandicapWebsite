@@ -17,13 +17,13 @@
                                 <td class="tableCell">
                                     <h5>
                                         Select Course Name:
-                                        <select ng-model="selectedCourse">
-                                            <option ng-repeat="round in controller.round" >{{round.courseName}}</option>
+                                        <select name="courseName" ng-model="controller.round.courseName">
+                                            <option ng-repeat="round in controller.rounds" >{{round.courseName}}</option>
                                         </select>
                                         <!-- <select ng-model="controller.round" ng-options="round.courseName as round.courseName for courseName in round.courseName" ></select> -->
                                     </h5>
                                     </td>
-                                    <td class="tableCell"><h5>Enter Score: <input type="text" class="tableCellContents" name="itemDesc" ng-model="controller.round.holdScore" size="10" /></h5></td>
+                                    <td class="tableCell"><h5>Enter Score: <input type="text" class="tableCellContents" name="holeScore" ng-model="controller.round.holeScore" size="10" /></h5></td>
                                     <td>&nbsp;</td>
                                     <td><button class="btn" ng-click="controller.addRound()"> Enter New Round</button></td>
                                 </tr>
@@ -37,7 +37,7 @@
                                     <td class="tableCell">Round Score</td>
                                     <td class="tableCell">Course Name</td>
                                 </tr>
-                                <tr ng-repeat="round in controller.round" class="tab-content"  align="center">
+                                <tr ng-repeat="round in controller.rounds" class="tab-content"  align="center">
                                     <td><h5 class="tableCell">{{round.roundID}}</h5></td>
                                     <td><h5 class="tableCell">{{round.holeScore}}</h5></td>
                                     <td><h5 class="tableCell">{{round.courseName}}</h5></td>

@@ -31,13 +31,15 @@
                         <table align="center" border="0" class="table-content">
                             <tr class="table-content" align="center">
                                 <td class="tableCell" width="20%">Course Name</td>
-                                <td class="tableCell" width="10%">Course Rating</td>
                                 <td class="tableCell" width="10%">Course Slope</td>
+                                <td class="tableCell" width="10%">Course Rating</td>
+
                             </tr>
-                            <tr ng-repeat="course in controller.course" class="tab-content" align="center">
+                            <tr ng-repeat="course in controller.courses" class="tab-content" align="center">
                                 <td><h5 class="tableCell">{{course.name}}</h5></td>
-                                <td><h5 class="tableCell">{{course.rating}}</h5></td>
                                 <td><h5 class="tableCell">{{course.slope}}</h5></td>
+                                <td><h5 class="tableCell">{{course.rating}}</h5></td>
+
                             </tr>
                         </table>
                     </form>

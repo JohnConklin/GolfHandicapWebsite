@@ -45,7 +45,7 @@ namespace GolfHandicapCalculator
 
             app.UseStaticFiles();
             app.UseCors(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

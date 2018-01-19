@@ -12,6 +12,12 @@ class AddRounds {
     }
 }
 
+class AddCourse {
+    constructor() {
+        this.message = 'Helo from the add course controller.';
+    }
+}
+
 
 class AboutController {
     constructor() {

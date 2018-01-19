@@ -4,13 +4,16 @@ class RoundAddController {
     constructor(roundService, $state) {
         this.roundService = roundService;
         this.$state = $state;
-        this.round = roundService.listRound();
-        this.course = roundService.listCourses();
+        this.rounds = roundService.listRound();
     }
 
     addRound() {
-        this.roundService.save(this.round).then(
-            () => this.$state.go('add')
+        console.log(this.round);
+
+        this.roundService.save(this.round).then(() =>
+            {
+                this.rounds = this.roundService.listRound();
+            }
         );
     }
 }

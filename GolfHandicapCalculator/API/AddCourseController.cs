@@ -39,30 +39,34 @@ namespace GolfHandicapCalculator.API
 
         //Post new courses to database or update is already loaded.
         [HttpPost]
-        public IActionResult Post([FromBody]GolfCourse course)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(this.ModelState);
-            }
+         public IActionResult Post([FromBody]GolfCourse course)
+         {
 
-            if (course.GolfCourseID == 0)
-            {
-                //Add course
-                _db.GolfCourses.Add(course);
-                _db.SaveChanges();
-            }
-            else
-            {
-                //Update Course
-                var orginal = _db.GolfCourses.FirstOrDefault(g => g.GolfCourseID == course.GolfCourseID);
-                orginal.Name = course.Name;
-                orginal.Rating = course.Rating;
-                orginal.Slope = course.Slope;
-                _db.SaveChanges();
-            }
-            return Ok(course);
+             if (!ModelState.IsValid)
+             {
+                 return BadRequest(this.ModelState);
+             }
 
-        }
+             if (course.GolfCourseID == 0)
+             {
+                 //Add course
+                 _db.GolfCourses.Add(course);
+                 _db.SaveChanges();
+             }
+             else
+             {
+                 //Update Course
+                 var orginal = _db.GolfCourses.FirstOrDefault(g => g.GolfCourseID == course.GolfCourseID);
+                 orginal.Name = course.Name;
+                 orginal.Rating = course.Rating;
+                 orginal.Slope = course.Slope;
+                 _db.SaveChanges();
+             }
+             return Ok(course);
+         }
+
+ 
+
+
     }
 }

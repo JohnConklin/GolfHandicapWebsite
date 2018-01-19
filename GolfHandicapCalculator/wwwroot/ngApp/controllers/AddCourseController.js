@@ -4,12 +4,16 @@ class CourseAddController {
     constructor(courseService, $state) {
         this.courseService = courseService;
         this.$state = $state;
-        this.course = courseService.listCourses();
+        this.courses = courseService.listCourses();
     }
 
     addCourse() {
-        this.courseService.save(this.course).then(
-            () => this.$state.go('Add')
+        console.log(this.course);
+
+        this.courseService.save(this.course).then(() =>
+        {
+            this.courses = this.courseService.listCourses();
+        }
         );
     }
 }
