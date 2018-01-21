@@ -1,4 +1,4 @@
-﻿<body>
+﻿<body onload="document.refresh();">
     <div>
         <a href="https://www.swingbyswing.com/courses" target="_blank">Find Course Slope and Rating Here</a>
         <hr />
@@ -35,10 +35,10 @@
                                 <td class="tableCell" width="10%">Course Rating</td>
 
                             </tr>
-                            <tr ng-repeat="course in controller.courses" class="tab-content" align="center">
-                                <td><h5 class="tableCell">{{course.name}}</h5></td>
-                                <td><h5 class="tableCell">{{course.slope}}</h5></td>
-                                <td><h5 class="tableCell">{{course.rating}}</h5></td>
+                            <tr ng-repeat="course in controller.courses | orderBy: 'name'" class="tab-content" align="center">
+                                <td><h5 class="tableCellContentsDisplay">{{course.name}}</h5></td>
+                                <td><h5 class="tableCellContentsDisplay">{{course.slope}}</h5></td>
+                                <td><h5 class="tableCellContentsDisplay">{{course.rating}}</h5></td>
 
                             </tr>
                         </table>

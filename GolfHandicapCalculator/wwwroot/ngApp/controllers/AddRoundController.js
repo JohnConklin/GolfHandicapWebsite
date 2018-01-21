@@ -12,9 +12,14 @@ class RoundAddController {
 
         this.roundService.save(this.round).then(() =>
             {
+                window.location.reload(true);   //added so the form fields would clear contents submtited to db.
                 this.rounds = this.roundService.listRound();
             }
         );
+    }
+
+    HandicapCalc() {
+
     }
 }
 

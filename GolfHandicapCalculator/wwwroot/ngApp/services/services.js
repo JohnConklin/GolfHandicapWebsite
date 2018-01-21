@@ -48,3 +48,9 @@ class RoundService {
 
 RoundService.$inject = ['$resource'];
 angular.module("GolfHandicapCalculator").service("roundService", RoundService);
+
+class HandicapCalc {
+    calcHandicap() {
+
+    }
+}

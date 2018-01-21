@@ -33,14 +33,12 @@
                         <form name="ExistingRounds">
                             <table align="center" border="0" class="table-content">
                                 <tr class="table-content" align="center">
-                                    <td class="tableCell" width="10%">ID</td>
                                     <td class="tableCell">Round Score</td>
                                     <td class="tableCell">Course Name</td>
                                 </tr>
                                 <tr ng-repeat="round in controller.rounds" class="tab-content"  align="center">
-                                    <td><h5 class="tableCell">{{round.roundID}}</h5></td>
-                                    <td><h5 class="tableCell">{{round.holeScore}}</h5></td>
-                                    <td><h5 class="tableCell">{{round.courseName}}</h5></td>
+                                    <td><h5 class="tableCellContentsDisplay">{{round.holeScore}}</h5></td>
+                                    <td><h5 class="tableCellContentsDisplay">{{round.courseName}}</h5></td>
                                 </tr>
                             </table>
                         </form>

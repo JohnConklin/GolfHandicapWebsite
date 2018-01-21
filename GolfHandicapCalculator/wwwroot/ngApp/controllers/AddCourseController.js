@@ -12,6 +12,7 @@ class CourseAddController {
 
         this.courseService.save(this.course).then(() =>
         {
+            window.location.reload(true);   //added so the form fields would clear contents submtited to db.
             this.courses = this.courseService.listCourses();
         }
         );
