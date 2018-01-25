@@ -13,6 +13,7 @@ namespace GolfHandicapCalculator.API
     public class AddRoundController : Controller
     {
         private UserContext _db;
+        private UserContext _db1;
 
         public AddRoundController(UserContext db)
         {
