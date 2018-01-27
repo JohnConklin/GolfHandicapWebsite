@@ -10,12 +10,11 @@ using GolfHandicapCalculator.Models;
 namespace GolfHandicapCalculator.API
 {
     [Route("api/[controller]")]
-    public class AddRoundController : Controller
+    public class RoundController : Controller
     {
         private UserContext _db;
-        private UserContext _db1;
 
-        public AddRoundController(UserContext db)
+        public RoundController(UserContext db)
         {
             this._db = db;
         }
@@ -38,15 +37,6 @@ namespace GolfHandicapCalculator.API
             }
             return Ok(rounds);
         }
-
-        //Get list of courses
-        /*
-        [HttpGet]
-        public IEnumerable<GolfCourse> Get()
-        {
-            return _db.GolfCourses.ToList();
-        }
-        */
 
         [HttpPost]
         public IActionResult Post([FromBody]Round round)

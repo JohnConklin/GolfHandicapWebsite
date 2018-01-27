@@ -1,5 +1,5 @@
 ﻿//add new course
-class CourseAddController {
+class CourseController {
 
     constructor(courseService, $state) {
         this.courseService = courseService;
@@ -19,4 +19,4 @@ class CourseAddController {
     }
 }
 
-CourseAddController.$inject = ['courseService', '$state'];
+CourseController.$inject = ['courseService', '$state'];

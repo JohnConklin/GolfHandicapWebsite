@@ -9,5 +9,6 @@ namespace GolfHandicapCalculator.Models
     {
         public int HandiCapID { get; set; }
         public int HandiCapValue { get; set; }
+        public ICollection<User> User { get; set; }  //User ID
     }
 }

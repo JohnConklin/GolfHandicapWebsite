@@ -1,5 +1,5 @@
 ﻿//add new round
-class RoundAddController {
+class RoundController {
 
     constructor(roundService, courseService, $state) {
         this.roundService = roundService;
@@ -25,23 +25,5 @@ class RoundAddController {
     }
 }
 
-RoundAddController.$inject = ['roundService', 'courseService', '$state'];
+RoundController.$inject = ['roundService', 'courseService', '$state'];
 
-/*
-//Added to display courses in drop-down list for adding rounds.
-class DisplayCourses {
-    
-    constructor(courseService, $state) {
-        this.courseService = courseService;
-        this.$state = $state;
-        this.courses = courseService.listCourses();
-    }
-
-    listCourses() {
-        this.courses = this.listCourses();
-    }
-
-}
-
-DisplayCourses.$inject = ['courseService', '$state'];
-*/

@@ -9,11 +9,11 @@ using GolfHandicapCalculator.Models;
 namespace GolfHandicapCalculator.API
 {
     [Route("api/[controller]")]
-    public class AddCourseController : Controller
+    public class CourseController : Controller
     {
         private UserContext _db;
 
-        public AddCourseController(UserContext db)
+        public CourseController(UserContext db)
         {
             this._db = db;
         }
@@ -65,9 +65,5 @@ namespace GolfHandicapCalculator.API
              }
              return Ok(course);
          }
-
- 
-
-
     }
 }
