@@ -39,6 +39,15 @@ namespace GolfHandicapCalculator.API
             return Ok(rounds);
         }
 
+        //Get list of courses
+        /*
+        [HttpGet]
+        public IEnumerable<GolfCourse> Get()
+        {
+            return _db.GolfCourses.ToList();
+        }
+        */
+
         [HttpPost]
         public IActionResult Post([FromBody]Round round)
         {

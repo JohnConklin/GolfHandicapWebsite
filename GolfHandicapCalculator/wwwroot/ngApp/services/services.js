@@ -5,7 +5,9 @@ class CourseService {
         this.CourseService = $resource('/api/addcourse/:id');
     }
 
+   
     listCourses() {
+       // debugger;
         return this.CourseService.query();
     }
 
