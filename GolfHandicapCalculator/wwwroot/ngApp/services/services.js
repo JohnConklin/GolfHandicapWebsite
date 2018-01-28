@@ -2,12 +2,13 @@
 class CourseService {
 
     constructor($resource) {
+        //debugger;
         this.CourseService = $resource('/api/addcourse/:id');
     }
 
    
     listCourses() {
-       // debugger;
+        //debugger;
         return this.CourseService.query();
     }
 

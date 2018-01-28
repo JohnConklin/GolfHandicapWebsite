@@ -10,6 +10,6 @@ namespace GolfHandicapCalculator.Models
         public int RoundID { get; set; }
         public int HoleScore { get; set; }
         public string CourseName { get; set; }
-        public ICollection<User> User { get; set; }  //User ID
+        //public ICollection<User> User { get; set; }  //User ID
     }
 }
