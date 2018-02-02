@@ -21,7 +21,7 @@ class RoundController {
     }
 
     HandicapCalc() {
-
+        return true; 
     }
 }
 

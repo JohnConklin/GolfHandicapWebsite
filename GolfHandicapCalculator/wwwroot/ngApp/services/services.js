@@ -3,7 +3,7 @@ class CourseService {
 
     constructor($resource) {
         //debugger;
-        this.CourseService = $resource('/api/addcourse/:id');
+        this.CourseService = $resource('/api/course/:id');
     }
 
    
@@ -28,7 +28,7 @@ angular.module("GolfHandicapCalculator").service("courseService", CourseService)
 class RoundService {
 
     constructor($resource) {
-        this.RoundService = $resource('/api/addround/:id');
+        this.RoundService = $resource('/api/round/:id');
     }
 
     listRound() {

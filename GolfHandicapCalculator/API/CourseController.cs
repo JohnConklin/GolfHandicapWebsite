@@ -22,7 +22,7 @@ namespace GolfHandicapCalculator.API
         [HttpGet]
         public IEnumerable<GolfCourse> Get()
         {
-            var courses= _db.GolfCourses.ToList();
+            var courses = _db.GolfCourses.ToList();
             return courses;
         }
 

@@ -49,7 +49,7 @@ namespace GolfHandicapCalculator.API
 
             if (handicap.HandiCapID == 0)
             {
-                //Add course
+                //Add handicap
                 _db.HandiCaps.Add(handicap);
                 _db.SaveChanges();
             }
