@@ -20,7 +20,15 @@ class RoundController {
         );
     }
 
-    HandicapCalc() {
+    /*
+    1.  Calculate Handicap Differential:  (Score - Course Rating) x 113 / Slope Rating  --FOR EACH INDIVIDUAL ROUND
+    2.  Get average of differentials by adding together and dividing by total number used.
+    3.  Final Handicap:  (Sum of differentials / number of differentials) x 0.96
+
+    */
+    HandicapCalc(score) {
+        x = this.round.score;
+
         return true; 
     }
 }
