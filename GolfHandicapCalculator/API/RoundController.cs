@@ -46,18 +46,15 @@ namespace GolfHandicapCalculator.API
 
             if (round.RoundID == 0)
             {
-                //Add course
+                //Add rounds
                 _db.Rounds.Add(round);
                 _db.SaveChanges();
             }
             else
             {
                 //Update Round
-                //Calculate Handicap Differential:  (Score - Course Rating) x 113 / Slope Rating    --FOR EACH INDIVIDUAL ROUND
-
                 var orginal = _db.Rounds.FirstOrDefault(g => g.RoundID == round.RoundID);
                 orginal.HoleScore = round.HoleScore;
-                orginal.RoundDifferential = round.RoundDifferential;
                 _db.SaveChanges();
             }
             return Ok(round);
