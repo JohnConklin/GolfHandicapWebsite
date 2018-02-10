@@ -6,7 +6,6 @@ namespace GolfHandicapCalculator.Models
     {
         public UserContext(DbContextOptions<UserContext> options) : base(options) { }
         public DbSet<User> Users { get; set; }
-        public DbSet<Handicap> HandiCaps { get; set; }
         public DbSet<Round> Rounds { get; set; }
         public DbSet<GolfCourse> GolfCourses { get; set; }
 

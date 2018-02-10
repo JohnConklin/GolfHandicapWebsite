@@ -33,10 +33,12 @@
                             <tr class="table-content" align="center">
                                 <td class="tableCell">Round Score</td>
                                 <td class="tableCell">Course Name</td>
+                                <td class="tableCell">Round Differential</td>
                             </tr>
                             <tr ng-repeat="round in controller.rounds | orderBy: 'courseName'" class="tab-content" align="center">
                                 <td><h5 class="tableCellContentsDisplay">{{round.holeScore}}</h5></td>
                                 <td><h5 class="tableCellContentsDisplay">{{round.courseName}}</h5></td>
+                                <td><h5 class="tableCellContentsDisplay">{{round.roundDifferential}}</h5></td>
                             </tr>
                         </table>
                     </form>
@@ -51,7 +53,7 @@
                             </tr>
                             <tr class="tab-content" align="center">
                                 <td class="tableCell"><h5>Your Handicap Is: </h5></td>
-                                <td class="tableCell"><h5 class="tableCellContentsDisplay">[PLACEHOLDER]</h5></td>
+                                <td class="tableCell"><h5 class="tableCellContentsDisplay">{{controller.handicap}}</h5></td>
                             </tr>
                         </table>
                     </form>

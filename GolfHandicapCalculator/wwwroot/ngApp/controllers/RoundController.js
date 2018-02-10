@@ -35,9 +35,15 @@ class RoundController {
 
 
     HandicapCalc() {
-        x = this.round.score;
+        for (var i = 0; i > 1; i++) {
+            let avgdiff = (this.rounds.differential);
+            
+            
+        }
+        let handicap = avgdiff / count(this.rounds.differential) * 0.96
+        handicap = Math.round(handicap);
 
-        return true; 
+        return handicap; 
     }
 }
 
