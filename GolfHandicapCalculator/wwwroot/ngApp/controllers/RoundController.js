@@ -34,15 +34,25 @@ class RoundController {
     */
 
 
-    HandicapCalc() {
-        for (var i = 0; i > 1; i++) {
-            let avgdiff = (this.rounds.differential);
-            
-            
+    handicapCalc() {
+
+        var diff = this.rounds.differential;
+        var sum = 0;
+    
+        for (var key in diff) {
+            //sum the values
+            sum += key + diff;
         }
-        let handicap = avgdiff / count(this.rounds.differential) * 0.96
+        //get length of array
+        let count = diff.length;
+
+        //get average
+        let avgDiff = sum / count;
+
+        let handicap = avgdiff / count * 0.96;
         handicap = Math.round(handicap);
 
+        console.log(handicap);
         return handicap; 
     }
 }
