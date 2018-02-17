@@ -38,7 +38,7 @@ class RoundController {
 
         var sum = 0;
 
-        //debugger;
+        debugger;
 
         for (var diff of this.rounds) {
             //sum the values
@@ -50,10 +50,9 @@ class RoundController {
         //get average
         var avgDiff = (sum / count) * .96;
 
-        //var handicap = (avgDiff / count) * 0.96;
         var handicap = Math.round(avgDiff);
 
-        //console.log(handicap);
+        console.log(handicap);
     
         return handicap; 
     }
