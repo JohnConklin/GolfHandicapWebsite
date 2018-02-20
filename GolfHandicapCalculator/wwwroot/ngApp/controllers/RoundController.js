@@ -38,7 +38,7 @@ class RoundController {
 
         var sum = 0;
 
-        debugger;
+        //debugger;
 
         for (var diff of this.rounds) {
             //sum the values
