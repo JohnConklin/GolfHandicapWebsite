@@ -53,8 +53,9 @@ class RoundController {
         var handicap = Math.round(avgDiff);
 
         console.log(handicap);
-    
+
         return handicap; 
+        
     }
 }
 
