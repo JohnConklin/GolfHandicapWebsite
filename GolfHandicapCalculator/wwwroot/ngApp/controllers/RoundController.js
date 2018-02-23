@@ -7,6 +7,7 @@ class RoundController {
         this.rounds = roundService.listRound();
         this.selected;
         this.courses = courseService.listCourses();
+        this.handicap;
     }
 
     //1.  Calculate Handicap Differential:  (Score - Course Rating) x 113 / Slope Rating  --FOR EACH INDIVIDUAL ROUND
@@ -47,15 +48,23 @@ class RoundController {
         //get length of array
         var count = this.rounds.length;
 
-        //get average
-        var avgDiff = (sum / count) * .96;
+        //Need to have at 5 rounds to compute handicap correctly
 
-        var handicap = Math.round(avgDiff);
+        if (count <= 4) {
+            this.handicap = "You need more rounds to compute handicap";
+        }
+        else {
+            //get average
+            var avgDiff = (sum / count) * .96;
 
-        console.log(handicap);
+            //round result
+            var handicap = Math.round(avgDiff);
 
-        return handicap; 
-        
+            this.handicap = handicap;
+
+            return handicap; 
+        }
+
     }
 }
 
