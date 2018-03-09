@@ -52,3 +52,20 @@ class RoundService {
 RoundService.$inject = ['$resource'];
 angular.module("GolfHandicapCalculator").service("roundService", RoundService);
 
+class UserService {
+
+    constructor($resource) {
+        this.UserService = $resource('/api/login/:user');
+    }
+
+    register() {
+        return this.UserService.register();
+    }
+
+    login(user) {
+        return this.UserService.login(user).$promise;
+    }
+}
+
+UserService.$inject = ['$resource'];
+angular.module("GolfHandicapCalculator").service("userService", UserService);

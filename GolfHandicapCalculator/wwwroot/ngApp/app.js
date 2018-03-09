@@ -29,10 +29,14 @@ angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(rou
                 controllerAs: 'controller'
             }).state('login', {
                 url: '/login',
-                templateUrl: '/ngApp/views/login.html'
+                templateUrl: '/ngApp/views/login.html',
+                controller: UserController,
+                controllerAs:  'controller'
             }).state('register', {
                 url: '/register',
-                templateUrl: '/ngApp/views/register.html'
+                templateUrl: '/ngApp/views/register.html',
+                controller: UserController,
+                controllerAs: 'controller'
             }).state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
