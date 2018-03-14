@@ -58,6 +58,11 @@ class UserService {
         this.UserService = $resource('/api/login/:user');
     }
 
+    //trying to create user access pages only
+    isLoggedIn() {
+        return false;
+    }
+
     register() {
         return this.UserService.register();
     }
@@ -69,3 +74,4 @@ class UserService {
 
 UserService.$inject = ['$resource'];
 angular.module("GolfHandicapCalculator").service("userService", UserService);
+
