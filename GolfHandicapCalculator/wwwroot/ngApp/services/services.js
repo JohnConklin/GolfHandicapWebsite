@@ -6,7 +6,7 @@ class CourseService {
         this.CourseService = $resource('/api/course/:id');
     }
 
-   
+
     listCourses() {
         //debugger;
         return this.CourseService.query();
@@ -56,6 +56,11 @@ class UserService {
 
     constructor($resource) {
         this.UserService = $resource('/api/login/:user');
+    }
+
+    //trying to create user access pages only
+    isLoggedIn() {
+        return false;
     }
 
     register() {
