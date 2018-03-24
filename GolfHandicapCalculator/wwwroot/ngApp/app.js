@@ -38,12 +38,12 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
     }).state('login', {
         url: '/login',
         templateUrl: '/ngApp/views/login.html',
-        controller: UserController,
+        controller: UsersController,
         controllerAs: 'controller'
     }).state('register', {
         url: '/register',
         templateUrl: '/ngApp/views/register.html',
-        controller: UserController,
+        controller: UsersController,
         controllerAs: 'controller'
     }).state('notFound', {
         url: '/notFound',
@@ -54,7 +54,7 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 }
 
-config.$inject = ['$rootScope', '$state', 'userService'];
+/*config.$inject = ['$rootScope', '$state', 'userService'];
 function config($rootScope, $state, accountService) {
     $rootScope.$on('$stateChangeStart', (e, to) => {
         // protect non-public views
@@ -66,4 +66,4 @@ function config($rootScope, $state, accountService) {
         }
     });
 }
-angular.module('GolfHandicapCalculator').run(config);
+angular.module('GolfHandicapCalculator').run(config);*/

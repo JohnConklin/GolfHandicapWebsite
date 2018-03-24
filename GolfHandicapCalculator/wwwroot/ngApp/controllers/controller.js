@@ -30,5 +30,11 @@ class ContactController {
     }
 }
 
+class UsersController {
+    constructor() {
+        this.message = "User Controller";
+    }
+}
+
 
 
