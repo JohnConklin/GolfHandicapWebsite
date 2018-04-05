@@ -6,7 +6,7 @@ class CourseService {
         this.CourseService = $resource('/api/course/:id');
     }
 
-   
+
     listCourses() {
         //debugger;
         return this.CourseService.query();
@@ -55,7 +55,12 @@ angular.module("GolfHandicapCalculator").service("roundService", RoundService);
 class UserService {
 
     constructor($resource) {
-        this.UserService = $resource('/api/login/:user');
+        this.UserService = $resource('/api/users/:id');
+    }
+
+    //trying to create user access pages only
+    isLoggedIn() {
+        return false;
     }
 
     //trying to create user access pages only
@@ -69,6 +74,10 @@ class UserService {
 
     login(user) {
         return this.UserService.login(user).$promise;
+    }
+
+    save(user) {
+        return this.UserService.save(user).$promise;
     }
 }
 

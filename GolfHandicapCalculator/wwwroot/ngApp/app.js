@@ -21,25 +21,17 @@ angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(rou
                 url: '/add',
                 templateUrl: '/ngApp/views/add.html',
                 controller: CourseController,
-                controllerAs: 'controller',
-                //trying to create user access pages only
-                data: {
-                    requiresAuthentication: true
-                }
+                controllerAs: 'controller'
             }).state('Rounds', {
                 url: '/rounds',
                 templateUrl: '/ngApp/views/rounds.html',
                 controller: RoundController,
-                controllerAs: 'controller',
-                //trying to create user access pages only
-                data: {
-                    requiresAuthentication: true
-                }
+                controllerAs: 'controller'
             }).state('login', {
                 url: '/login',
                 templateUrl: '/ngApp/views/login.html',
                 controller: UserController,
-                controllerAs: 'controller'
+                controllerAs:  'controller'
             }).state('register', {
                 url: '/register',
                 templateUrl: '/ngApp/views/register.html',
@@ -53,17 +45,3 @@ angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(rou
             $urlRouterProvider.otherwise('/notFound');
             $locationProvider.html5Mode(true);
         }
-
-        config.$inject = ['$rootScope', '$state', 'userService'];
-        function config($rootScope, $state, accountService) {
-            $rootScope.$on('$stateChangeStart', (e, to) => {
-                // protect non-public views
-                if (to.data && to.data.requiresAuthentication) {
-                    if (!accountService.isLoggedIn()) {
-                        e.preventDefault();
-                        $state.go('login');
-                    }
-                }
-            });
-        }
-        angular.module('GolfHandicapCalculator').run(config);

@@ -49,6 +49,7 @@ namespace GolfHandicapCalculator.Controllers
             return Auth.GenerateJWT(user);
         }
 
+        //Users login
         [HttpPost("login")]
         public string Login([FromBody]User user)
         {
