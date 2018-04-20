@@ -1,5 +1,4 @@
-﻿
-class CourseService {
+﻿class CourseService {
 
     constructor($resource) {
         //debugger;
@@ -52,29 +51,38 @@ class RoundService {
 RoundService.$inject = ['$resource'];
 angular.module("GolfHandicapCalculator").service("roundService", RoundService);
 
-class UserService {
+class UsersService {
 
     constructor($resource) {
-        this.UserService = $resource('/api/users/:id');
+        console.log("UsersService - File: service.js");
+        this.UsersService = $resource('/api/users/:id', null, {
+            login: {
+                method: "POST",
+                url: "/api/users/login"
+            }
+        });
     }
 
     //trying to create user access pages only
     isLoggedIn() {
-        return false;
+        return true;
     }
 
     register() {
-        return this.UserService.register();
+        console.log("Register - File: service.js");
+        return this.UsersService.register();
     }
 
-    login(user) {
-        return this.UserService.login(user).$promise;
+    userLogin(user) {
+        console.log("Login - File: service.js")
+        return this.UsersService.login(user).$promise;
     }
 
     save(user) {
-        return this.UserService.save(user).$promise;
+        return this.UsersService.save(user).$promise;
     }
+
 }
 
-UserService.$inject = ['$resource'];
-angular.module("GolfHandicapCalculator").service("userService", UserService);
+UsersService.$inject = ['$resource'];
+angular.module("GolfHandicapCalculator").service("usersService", UsersService);

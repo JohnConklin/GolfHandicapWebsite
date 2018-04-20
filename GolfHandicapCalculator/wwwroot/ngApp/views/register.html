@@ -9,10 +9,10 @@
 
                 </div>
             </nav>
-            <div class="container hero">
+            <div class="container hero" ng-app="GolfHandicapCalculator">
                 <div class="row">
                     <form name="Register">
-                        <table align="center" border="0" class="table-content" ng-app="GolfHandicapCalculator">
+                        <table align="center" border="0" class="table-content" >
                             <tr class="table-content">
                                 <td class="tableCell"><h5>Email: <input type="text" class="tableCellContents" name="email" ng-model="controller.user.email" /></h5></td>
                             </tr>
@@ -26,7 +26,7 @@
                                 <td>&nbsp;</td>
                             </tr>
                             <tr class="table-content">
-                                <td><button class="btn" ng-click="controller.register()"> Register</button></td>
+                                <td colspan="2" align="center"><button class="btn" ng-click="controller.register()"> Register New Account</button></td>
                             </tr>
 
                         </table>

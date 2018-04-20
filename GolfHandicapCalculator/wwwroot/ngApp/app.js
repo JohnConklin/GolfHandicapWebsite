@@ -22,7 +22,6 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
         templateUrl: '/ngApp/views/add.html',
         controller: CourseController,
         controllerAs: 'controller',
-        //trying to create user access pages only
         data: {
             requiresAuthentication: true
         }
@@ -31,16 +30,15 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
         templateUrl: '/ngApp/views/rounds.html',
         controller: RoundController,
         controllerAs: 'controller',
-        //trying to create user access pages only
         data: {
             requiresAuthentication: true
         }
-    }).state('login', {
+    }).state('Login', {
         url: '/login',
         templateUrl: '/ngApp/views/login.html',
         controller: UsersController,
         controllerAs: 'controller'
-    }).state('register', {
+    }).state('Register', {
         url: '/register',
         templateUrl: '/ngApp/views/register.html',
         controller: UsersController,
@@ -53,17 +51,18 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/notFound');
     $locationProvider.html5Mode(true);
 }
-
-/*config.$inject = ['$rootScope', '$state', 'userService'];
-function config($rootScope, $state, accountService) {
+/*
+config.$inject = ['$rootScope', '$state', 'usersService'];
+function config($rootScope, $state, usersService) {
     $rootScope.$on('$stateChangeStart', (e, to) => {
         // protect non-public views
         if (to.data && to.data.requiresAuthentication) {
-            if (!accountService.isLoggedIn()) {
+            if (!usersService.isLoggedIn()) {
                 e.preventDefault();
                 $state.go('login');
             }
         }
     });
 }
-angular.module('GolfHandicapCalculator').run(config);*/
+angular.module('GolfHandicapCalculator').run(config);
+*/

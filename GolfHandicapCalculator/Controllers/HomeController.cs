@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace GolfHandicapCalculator.Controllers
+namespace GolfHandicapCalculator.API
 {
     public class HomeController : Controller
     {

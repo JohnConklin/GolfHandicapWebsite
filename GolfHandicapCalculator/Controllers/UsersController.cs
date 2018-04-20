@@ -32,7 +32,7 @@ namespace GolfHandicapCalculator.Controllers
         }
 
         // POST api/Users/register
-        [HttpPost("register")]
+        [HttpPost]
         public string Post([FromBody]User user)
         {
             User foundUser = context.Users.SingleOrDefault<User>(u => u.UserName == user.UserName);
@@ -46,11 +46,13 @@ namespace GolfHandicapCalculator.Controllers
             user.Password = Auth.Hash(user.Password, user.Salt);
             context.Users.Add(user);
             context.SaveChanges();
+            //Login(user);
             return Auth.GenerateJWT(user);
         }
 
         //Users login
-        [HttpPost("login")]
+        [Route("login")]
+        [HttpPost]
         public string Login([FromBody]User user)
         {
             User foundUser = context.Users.SingleOrDefault<User>(u => u.UserName == user.UserName && u.Password == Auth.Hash(user.Password, u.Salt));
