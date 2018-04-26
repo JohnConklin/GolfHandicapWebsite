@@ -18,10 +18,10 @@ namespace GolfHandicapCalculator.Controllers
         }
 
         // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("test")]
+        public bool Get()
         {
-            return new string[] { "value1", "value2" };
+            return Auth.IsValidToken(Request.Headers["Authorization"]);
         }
 
         // GET api/values/5
@@ -63,6 +63,7 @@ namespace GolfHandicapCalculator.Controllers
             }
 
             return "You failed to pass authentication!!!";
+
         }
 
         // PUT api/values/5

@@ -54,7 +54,7 @@ angular.module("GolfHandicapCalculator").service("roundService", RoundService);
 class UsersService {
 
     constructor($resource) {
-        console.log("UsersService - File: service.js");
+        //console.log("UsersService - File: service.js");
         this.UsersService = $resource('/api/users/:id', null, {
             login: {
                 method: "POST",
@@ -66,16 +66,16 @@ class UsersService {
     //trying to create user access pages only
     isLoggedIn() {
         return true;
+        console.log("You are logged in.");
     }
 
     register() {
-        console.log("Register - File: service.js");
         return this.UsersService.register();
     }
 
     userLogin(user) {
-        console.log("Login - File: service.js")
         return this.UsersService.login(user).$promise;
+        return this.isLoggedIn().$promise;
     }
 
     save(user) {

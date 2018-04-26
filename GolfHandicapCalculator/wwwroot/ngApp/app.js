@@ -23,7 +23,8 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: CourseController,
         controllerAs: 'controller',
         data: {
-            requiresAuthentication: true
+            requiresAuthentication: true,
+            redirectTo: 'Login'
         }
     }).state('Rounds', {
         url: '/rounds',
@@ -31,7 +32,8 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: RoundController,
         controllerAs: 'controller',
         data: {
-            requiresAuthentication: true
+            requiresAuthentication: true,
+            redirectTo: 'Login'
         }
     }).state('Login', {
         url: '/login',
@@ -51,7 +53,7 @@ function routing($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/notFound');
     $locationProvider.html5Mode(true);
 }
-/*
+
 config.$inject = ['$rootScope', '$state', 'usersService'];
 function config($rootScope, $state, usersService) {
     $rootScope.$on('$stateChangeStart', (e, to) => {
@@ -59,10 +61,9 @@ function config($rootScope, $state, usersService) {
         if (to.data && to.data.requiresAuthentication) {
             if (!usersService.isLoggedIn()) {
                 e.preventDefault();
-                $state.go('login');
+                $state.go('Login');
             }
         }
     });
 }
 angular.module('GolfHandicapCalculator').run(config);
-*/
