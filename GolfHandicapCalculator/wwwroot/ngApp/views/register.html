@@ -3,37 +3,35 @@
         <div class="header-dark">
             <nav class="navbar navbar-default navigation-clean-search">
                 <div class="container">
-                    <div class="navbar-header">
-                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
-
                 </div>
             </nav>
             <div class="container hero" ng-app="GolfHandicapCalculator">
-                <div class="row">
-                    <form name="Register">
-                        <table align="center" border="0" class="table-content" >
-                            <tr class="table-content">
-                                <td class="tableCell"><h5>Email: <input type="text" class="tableCellContents" name="email" ng-model="controller.user.email" /></h5></td>
-                            </tr>
-                            <tr class="table-content">
-                                <td class="tableCell"><h5>User Name: <input type="text" class="tableCellContents" name="userName" ng-model="controller.user.userName" /></h5></td>
-                            </tr>
-                            <tr class="table-content">
-                                <td class="tableCell"><h5>Password: <input type="password" class="tableCellContents" name="password" ng-model="controller.user.password" size="10" /></h5></td>
-                            </tr>
-                            <tr class="table-content">
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr class="table-content">
-                                <td colspan="2" align="center"><button class="btn" ng-click="controller.register()"> Register New Account</button></td>
-                            </tr>
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="row">
+                        <form name="Register">
+                            <table align="center" border="0" class="table-content">
+                                <tr class="table-content">
+                                    <td class="tableCell"><h5>Email: <input type="text" class="tableCellContents" name="email" ng-model="controller.user.email" /></h5></td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td class="tableCell"><h5>User Name: <input type="text" class="tableCellContents" name="userName" ng-model="controller.user.userName" /></h5></td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td class="tableCell"><h5>Password: <input type="password" class="tableCellContents" name="password" ng-model="controller.user.password" size="10" /></h5></td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td colspan="2" align="center"><button class="btn" ng-click="controller.register()"> Register New Account</button></td>
+                                </tr>
 
-                        </table>
-                    </form>
-                    <hr />
+                            </table>
+                        </form>
+                        <hr />
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
+        </div>
 </body>

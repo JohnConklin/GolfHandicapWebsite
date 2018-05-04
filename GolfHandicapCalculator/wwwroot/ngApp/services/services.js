@@ -63,19 +63,20 @@ class UsersService {
         });
     }
 
-    //trying to create user access pages only
-    isLoggedIn() {
-        return true;
-        console.log("You are logged in.");
-    }
-
     register() {
         return this.UsersService.register();
     }
 
-    userLogin(user) {
+    login(user) {
+        console.log("Services.js - login");
         return this.UsersService.login(user).$promise;
         return this.isLoggedIn().$promise;
+    }
+
+    //trying to create user access pages only
+    isLoggedIn() {
+        return true;
+        console.log("You are logged in.");
     }
 
     save(user) {

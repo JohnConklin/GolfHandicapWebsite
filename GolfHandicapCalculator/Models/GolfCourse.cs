@@ -11,5 +11,6 @@ namespace GolfHandicapCalculator.Models
         public int Slope { get; set; }
         public double Rating { get; set; }
         public int GolfCourseID { get; set; }
+        public ICollection<User> User { get; set; }  //User ID
     }
 }

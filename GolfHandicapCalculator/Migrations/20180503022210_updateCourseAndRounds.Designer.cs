@@ -11,9 +11,10 @@ using System;
 namespace GolfHandicapCalculator.Migrations
 {
     [DbContext(typeof(UserContext))]
-    partial class UserContextModelSnapshot : ModelSnapshot
+    [Migration("20180503022210_updateCourseAndRounds")]
+    partial class updateCourseAndRounds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,6 +3,7 @@
     constructor(usersService, $state) {
         this.usersService = usersService;
         this.$state = $state;
+        this.error = "Y";
     }
 
     register() {
@@ -12,16 +13,30 @@
         );
     }
 
-    userLogin(user) {
-        this.usersService.userLogin(this.user).then(() => {
-            return this.usersService.isLoggedIn();
+    login(user) {
+        console.log("UserController.js - login");
+        this.usersService.login(this.user).then((results) => {
+            this.usersService.isLoggedIn();
+            window.location.href = "/";
+
+        }).catch((err) => {
+            this.error = err.data;
         });
     }
 
     isLoggedIn() {
+        console.log("UserController.js - isLoggedIn()");
+
+        if (this.currentUser == null) {
+            return false;
+        }
         return true;
-        window.location.href = "/";
-        console.log("You are logged in.");
+        window.location.href = "/about";
+
+    }
+
+    logout() {
+        return true;
     }
 }
 

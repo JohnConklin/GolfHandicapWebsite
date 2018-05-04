@@ -46,36 +46,27 @@ namespace GolfHandicapCalculator.Controllers
             user.Password = Auth.Hash(user.Password, user.Salt);
             context.Users.Add(user);
             context.SaveChanges();
-            //Login(user);
             return Auth.GenerateJWT(user);
         }
 
         //Users login
         [Route("login")]
         [HttpPost]
-        public string Login([FromBody]User user)
+        public IActionResult Login([FromBody]User user)
         {
             User foundUser = context.Users.SingleOrDefault<User>(u => u.UserName == user.UserName && u.Password == Auth.Hash(user.Password, u.Salt));
+            
 
             if (foundUser != null)
             {
-                return Auth.GenerateJWT(foundUser);
+                return Ok(foundUser);
+ 
             }
 
-            return "You failed to pass authentication!!!";
+            return BadRequest("You failed to pass authentication!!!");
 
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
