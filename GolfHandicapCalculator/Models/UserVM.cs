@@ -7,7 +7,7 @@ namespace GolfHandicapCalculator.Models
 {
     public class UserVM
     {
-        public string userID { get; set; }
-        public string userName { get; set; }
+        public int UserID { get; set; }
+        public string UserName { get; set; }
     }
 }

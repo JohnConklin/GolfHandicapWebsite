@@ -54,14 +54,19 @@ namespace GolfHandicapCalculator.Controllers
         [HttpPost]
         public IActionResult Login([FromBody]User user)
         {
+            UserVM vm = new UserVM();
+
             User foundUser = context.Users.SingleOrDefault<User>(u => u.UserName == user.UserName && u.Password == Auth.Hash(user.Password, u.Salt));
-            
+
+            vm.UserID = foundUser.Id;
+            vm.UserName = foundUser.UserName;
 
             if (foundUser != null)
             {
-                return Ok(foundUser);
- 
+                return Ok(vm);
+               
             }
+
 
             return BadRequest("You failed to pass authentication!!!");
 

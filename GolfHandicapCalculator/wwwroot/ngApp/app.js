@@ -1,4 +1,4 @@
-angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource']).config(routing);
+angular.module('GolfHandicapCalculator', ['ui.router', 'ngResource', 'angular-locker']).config(routing);
 
 routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function routing($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -66,4 +66,19 @@ function config($rootScope, $state, usersService) {
         }
     });
 }
+
+config(['lockerProvider', function config(lockerProvider) {
+    lockerProvider.defaults({
+        driver: 'session',
+        namespace: 'GolfHandicapCalulator',
+        seperator: '.',
+        eventsEnabled: true,
+        extend: {}
+    })
+}]);
+
+factory('MyFactory', ['locker', function MyFactory(locker) {
+    locker.put('someKey', 'someVal');
+}]);
+
 angular.module('GolfHandicapCalculator').run(config);
