@@ -1,9 +1,10 @@
 ﻿class UsersController {
 
-    constructor(usersService, $state) {
+    constructor(usersService, $state, $window) {
         this.usersService = usersService;
         this.$state = $state;
         this.error = "Y";
+        this.window = $window;
     }
 
     register() {
@@ -24,17 +25,7 @@
         });
     }
 
-    isLoggedIn() {
-        console.log("UserController.js - isLoggedIn()");
-
-        if (this.currentUser == null) {
-            return false;
-        }
-        return true;
-        window.location.href = "/about";
-
-    }
-
+   
     logout() {
         return true;
     }

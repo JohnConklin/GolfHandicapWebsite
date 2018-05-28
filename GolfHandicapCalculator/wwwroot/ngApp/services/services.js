@@ -1,13 +1,10 @@
 ﻿class CourseService {
 
     constructor($resource) {
-        //debugger;
         this.CourseService = $resource('/api/course/:id');
     }
 
-
     listCourses() {
-        //debugger;
         return this.CourseService.query();
     }
 
@@ -54,7 +51,6 @@ angular.module("GolfHandicapCalculator").service("roundService", RoundService);
 class UsersService {
 
     constructor($resource) {
-        //console.log("UsersService - File: service.js");
         this.UsersService = $resource('/api/users/:id', null, {
             login: {
                 method: "POST",
@@ -70,13 +66,15 @@ class UsersService {
     login(user) {
         console.log("Services.js - login");
         return this.UsersService.login(user).$promise;
-        return this.isLoggedIn().$promise;
+        //return this.isLoggedIn().$promise;
     }
 
     //trying to create user access pages only
     isLoggedIn() {
+        this.window.sessionStorage.setItem("id", this.user.id); //this sets a variable in session storage
+        this.window.sessionStorage.setItem("user", this.user.userName);
+        window.location.href = "/";
         return true;
-        console.log("You are logged in.");
     }
 
     save(user) {
