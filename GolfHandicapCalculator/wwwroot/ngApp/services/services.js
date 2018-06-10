@@ -67,6 +67,7 @@ class UsersService {
         console.log("Services.js - login");
         return this.UsersService.login(user).$promise;
         //return this.isLoggedIn().$promise;
+        this.isLoggedIn();
     }
 
     //trying to create user access pages only
