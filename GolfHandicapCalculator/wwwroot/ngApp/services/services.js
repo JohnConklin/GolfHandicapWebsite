@@ -66,17 +66,11 @@ class UsersService {
     login(user) {
         console.log("Services.js - login");
         return this.UsersService.login(user).$promise;
-        //return this.isLoggedIn().$promise;
-        this.isLoggedIn();
+
+        window.location.href = "/";
+
     }
 
-    //trying to create user access pages only
-    isLoggedIn() {
-        this.window.sessionStorage.setItem("id", this.user.id); //this sets a variable in session storage
-        this.window.sessionStorage.setItem("user", this.user.userName);
-        window.location.href = "/";
-        return true;
-    }
 
     save(user) {
         return this.UsersService.save(user).$promise;

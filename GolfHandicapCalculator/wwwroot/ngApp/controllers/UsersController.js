@@ -5,6 +5,7 @@
         this.$state = $state;
         this.error = "Y";
         this.window = $window;
+        this.user = { userName: '', password: '' };
     }
 
     register() {
@@ -14,10 +15,15 @@
         );
     }
 
-    login(user) {
+    login() {
         console.log("UserController.js - login");
         this.usersService.login(this.user).then((results) => {
-            this.usersService.isLoggedIn();
+            console.log("login");
+            this.window.sessionStorage.setItem("test", "test");
+            console.log("testing");
+            this.window.sessionStorage.setItem("id", vm.UserID);        //this sets a variable in session storage
+            this.window.sessionStorage.setItem("user", vm.UserName);
+
             window.location.href = "/";
 
         }).catch((err) => {
@@ -27,6 +33,8 @@
 
    
     logout() {
+        sessionStorage.clear();
+        window.location.href = "/";
         return true;
     }
 }
