@@ -18,12 +18,7 @@
     login() {
         console.log("UserController.js - login");
         this.usersService.login(this.user).then((results) => {
-            console.log("login");
-            this.window.sessionStorage.setItem("test", "test");
-            console.log("testing");
-            this.window.sessionStorage.setItem("id", vm.UserID);        //this sets a variable in session storage
-            this.window.sessionStorage.setItem("user", vm.UserName);
-
+            this.window.sessionStorage.setItem("id", this.user.userName);        //this sets a variable in session storage
             window.location.href = "/";
 
         }).catch((err) => {
@@ -39,4 +34,4 @@
     }
 }
 
-UsersController.$inject = ['usersService', '$state'];
+UsersController.$inject = ['usersService', '$state', '$window'];

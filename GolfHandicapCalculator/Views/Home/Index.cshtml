@@ -8,22 +8,37 @@
     <base href="/" />
 </head>
 <body>
+
     <div class="container">
         <h1>Golf Handicap Calculator</h1>
-            <div class="navbar-left">
-                    <a href="/login">Login &nbsp;&nbsp;</a>
-                    <a href="/register">Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> |
-                    <a href="/">Home &nbsp;&nbsp;</a>|
-                    <a href="/about">About &nbsp;&nbsp;</a>|
-                    <a href="/contact">Contact &nbsp;&nbsp;</a>|
-                    <a href="/add">Add Course &nbsp;&nbsp;</a>|
-                    <a href="/rounds">Add Rounds </a>
-              
-            </div>
-        </div>
-        <hr />
+        <div class="navbar-left">
+            <a href="/login">Login &nbsp;&nbsp;</a>
+            <a href="/register">Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> |
+            <a href="/">Home &nbsp;&nbsp;</a>|
+            <a href="/about">About &nbsp;&nbsp;</a>|
+            <a href="/contact">Contact &nbsp;&nbsp;</a>|
+            <script type="text/javascript">
+                if (sessionStorage.length > 0) {
+                    document.write('"<a href=" / add">Add Course &nbsp;&nbsp;</a>|');
+                    document.write('<a href=" / rounds">Add Rounds </a>');
+                } else {
+                    document.write('');
+                }
+            </script>
+            <!--<a href="/add">Add Course &nbsp;&nbsp;</a>|
+    <a href="/rounds">Add Rounds </a>-->
 
-        <ui-view></ui-view>
+        </div>
+    </div>
+    <hr />
+    <script type="text/javascript">
+        if (sessionStorage.length > 0) {
+            document.write("Welcome Back " + sessionStorage.getItem("id"));
+        } else {
+            document.write("Please login to add coures or rounds");
+        }
+    </script>
+    <ui-view></ui-view>
 
 
     <!-- Library Files -->
@@ -36,7 +51,7 @@
     <!-- App Files-->
 
     <script src="~/ngApp/app.js"></script>
-     <script src="~/ngApp/controllers/controller.js"></script>
+    <script src="~/ngApp/controllers/controller.js"></script>
     <script src="~/ngApp/controllers/CourseController.js"></script>
     <script src="~/ngApp/controllers/RoundController.js"></script>
     <script src="~/ngApp/controllers/UsersController.js"></script>

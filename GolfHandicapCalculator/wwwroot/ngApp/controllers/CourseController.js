@@ -8,8 +8,6 @@ class CourseController {
     }
 
     addCourse() {
-        console.log(this.course);
-
         this.courseService.save(this.course).then(() =>
         {
             window.location.reload(true);   //added so the form fields would clear contents submtited to db.

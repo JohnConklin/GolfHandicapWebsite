@@ -61,6 +61,7 @@ namespace GolfHandicapCalculator.API
                  orginal.Name = course.Name;
                  orginal.Rating = course.Rating;
                  orginal.Slope = course.Slope;
+                 
                  _db.SaveChanges();
              }
              return Ok(course);
