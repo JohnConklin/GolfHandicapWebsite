@@ -11,9 +11,10 @@ using System;
 namespace GolfHandicapCalculator.Migrations
 {
     [DbContext(typeof(UserContext))]
-    partial class UserContextModelSnapshot : ModelSnapshot
+    [Migration("20180626025959_updateTables")]
+    partial class updateTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,8 +32,6 @@ namespace GolfHandicapCalculator.Migrations
 
                     b.Property<int>("Slope");
 
-                    b.Property<string>("UserID");
-
                     b.HasKey("GolfCourseID");
 
                     b.ToTable("GolfCourses");
@@ -49,8 +48,6 @@ namespace GolfHandicapCalculator.Migrations
 
                     b.Property<int>("RoundDifferential");
 
-                    b.Property<string>("UserID");
-
                     b.HasKey("RoundID");
 
                     b.ToTable("Rounds");
@@ -61,11 +58,15 @@ namespace GolfHandicapCalculator.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("GolfCourseID");
+
                     b.Property<int>("MyProperty");
 
                     b.Property<string>("Password");
 
                     b.Property<string>("Role");
+
+                    b.Property<int?>("RoundID");
 
                     b.Property<string>("Salt");
 
@@ -75,7 +76,22 @@ namespace GolfHandicapCalculator.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("GolfCourseID");
+
+                    b.HasIndex("RoundID");
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("GolfHandicapCalculator.Models.User", b =>
+                {
+                    b.HasOne("GolfHandicapCalculator.Models.GolfCourse")
+                        .WithMany("User")
+                        .HasForeignKey("GolfCourseID");
+
+                    b.HasOne("GolfHandicapCalculator.Models.Round")
+                        .WithMany("User")
+                        .HasForeignKey("RoundID");
                 });
 #pragma warning restore 612, 618
         }

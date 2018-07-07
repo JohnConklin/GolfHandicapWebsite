@@ -64,11 +64,8 @@ class UsersService {
     }
 
     login(user) {
-        console.log("Services.js - login");
         return this.UsersService.login(user).$promise;
-
-        window.location.href = "/";
-
+        //window.location.href = "/";
     }
 
 

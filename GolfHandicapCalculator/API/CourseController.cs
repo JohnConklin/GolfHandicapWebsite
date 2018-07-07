@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using GolfHandicapCalculator.Models;
+using System.Collections.Generic;
 
 //API File 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -24,6 +24,17 @@ namespace GolfHandicapCalculator.API
         {
             var courses = _db.GolfCourses.ToList();
             return courses;
+        }
+        // GET api/<controller>/5  Display list of courses by ID
+        [HttpGet("{UserID}")]
+        public IActionResult Get(string UserId)
+        {
+            var golfcourses = _db.GolfCourses.Where(g => g.UserID == "john");
+            if (golfcourses == null)
+            {
+                return NotFound();
+            }
+            return Ok(golfcourses);
         }
 
         // GET api/<controller>/5  Display list of courses by ID
@@ -57,10 +68,11 @@ namespace GolfHandicapCalculator.API
              else
              {
                  //Update Course
-                 var orginal = _db.GolfCourses.FirstOrDefault(g => g.GolfCourseID == course.GolfCourseID);
+                 var orginal = _db.GolfCourses.FirstOrDefault(g => g.GolfCourseID == course.GolfCourseID && g.UserID == "john");
                  orginal.Name = course.Name;
                  orginal.Rating = course.Rating;
                  orginal.Slope = course.Slope;
+                 orginal.UserID = course.UserID;
                  
                  _db.SaveChanges();
              }
